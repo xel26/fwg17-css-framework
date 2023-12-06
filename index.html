@@ -18,7 +18,7 @@
       }
     </style>
   </head>
-  <body class="flex flex-col">
+  <body class="flex flex-col items-center">
     <!-- nav start -->
     <nav class="fixed w-full h-14 flex justify-center bg-[#0B090921]">
       <div class="flex justify-between items-center w-11/12">
@@ -53,11 +53,11 @@
     <!-- nav end -->
 
     <!-- landing page start -->
-    <section class="flex h-screen">
+    <section class="flex h-screen w-full">
       <div class="flex flex-1 justify-center items-center bg-gradient-to-b from-[#323436] to-[#0B0909]">
-        <div class="flex flex-col gap-6 max-w-xl h-fit">
+        <div class="flex flex-col gap-6 max-w-lg h-fit">
           <h1 class="text-5xl text-white font-medium">Start Your Day with <br> Coffee and Good <br> Meals</h1>
-          <p class="text-white">
+          <p class="text-white text-sm">
             We provide high quality beans, good taste, and healthy meals <br> made by
             love just for you. Start your day with us for a bigger <br> smile!
           </p>
@@ -93,212 +93,218 @@
     </section>
     <!-- landing page end -->
 
-    <!-- introduction start -->
-    <section class="introduction">
-      <div class="provide-list">
-        <div class="list">
-          <div class="content">
-            <div>
-              <hr />
-              <h1>
-                We Provide <span>Good Coffee</span> and
-                <span>Healthy Meals</span>
-              </h1>
-            </div>
-            <p>
+    <!-- list provide start -->
+    <section class="flex h-screen w-full">
+      <div class="h-[90%] flex w-full">
+        <div class="flex-1 flex justify-center items-center">
+          <div class="flex flex-col gap-4 h-fit max-w-lg">
+              <div class="flex items-center gap-4">
+                <hr class="border-[#ff8906] border-4 h-14"/>
+                <h1 class="text-5xl font-medium">
+                  We Provide <span class="text-[#8E6447]">Good <br> Coffee</span> and
+                  <span class="text-[#8E6447]">Healthy Meals</span>
+                </h1>
+              </div>
+              <p class="text-sm text-[#4F5665]">
+                You can explore the menu that we provide with fun and have their
+                own <br> taste and make your day better.
+              </p>
+              <div class="flex flex-col gap-4">
+                <div class="flex gap-4">
+                  <i class="h-5 bg-[#2FAB73] rounded-full text-white w-fit" data-feather="check-circle"></i>
+                  <p class="text-sm text-[#4F5665]">High quality beans</p>
+                </div>
+  
+                <div class="flex gap-4">
+                  <i class="h-5 bg-[#2FAB73] rounded-full text-white w-fit" data-feather="check-circle"></i>
+                  <p class="text-sm text-[#4F5665]">Healthy meals, you can request the ingredients</p>
+                </div>
+  
+                <div class="flex gap-4">
+                  <i class="h-5 bg-[#2FAB73] rounded-full text-white w-fit" data-feather="check-circle"></i>
+                  <p class="text-sm text-[#4F5665]">Free member card with a minimum purchase of IDR 200.000.</p>
+                </div>
+  
+                <div class="flex gap-4">
+                  <i class="h-5 bg-[#2FAB73] rounded-full text-white w-fit" data-feather="check-circle"></i>
+                  <p class="text-sm text-[#4F5665]">Chat with our staff to get better experience for ordering</p>
+                </div>
+              </div>
+          </div>
+        </div>
+  
+          <div class="bg-[url('assets/staff-image.jpg')] flex-1 bg-center bg-cover"></div>
+      </div>
+    </section>
+    <!-- list provide end -->
+
+    <!-- favorite product start -->
+    <section class="h-screen flex flex-col items-center w-11/12 gap-12">
+      <div class="flex flex-col items-center gap-4">
+        <h1 class="text-5xl font-medium mb-2">Here is People's <span class="text-[#8E6447]">Favorite</span></h1>
+        <hr class="border-[#ff8906] border-4 w-16"/>
+        <p class="text-[#4f5665]">
+          Let's choose and have a bit taste of poeple's favorite. It might be
+          yours too!
+        </p>
+      </div>
+
+      <div class="flex gap-6">
+        <div class="relative flex justify-center">
+          <div class="w-56 bg-orange-100">
+            <img src="./assets/home-product1.jpg" alt="" />
+          </div>
+          <div class="absolute w-11/12 bg-white shadow-md top-44 p-2 flex flex-col gap-2">
+            <h1 class="font-semibold" id="product-name">Hazelnut Latte</h1>
+            <p class="text-[0.7rem] text-[#4F5665]">
               You can explore the menu that we provide with fun and have their
               own taste and make your day better.
             </p>
-            <div class="list-check">
-              <div class="group-list-check">
-                <i data-feather="check-circle"></i>
-                <p>High quality beans</p>
-              </div>
-
-              <div class="group-list-check">
-                <i data-feather="check-circle"></i>
-                <p>Healthy meals, you can request the ingredients</p>
-              </div>
-
-              <div class="group-list-check">
-                <i data-feather="check-circle"></i>
-                <p>Free member card with a minimum purchase of IDR 200.000.</p>
-              </div>
-
-              <div class="group-list-check">
-                <i data-feather="check-circle"></i>
-                <p>Chat with our staff to get better experience for ordering</p>
-              </div>
+            <h1 class="text-[#FF8906] font-semibold" id="product-price">IDR 20.000</h1>
+            <div class="flex items-center gap-2">
+              <button class="w-9/12 bg-[#FF8906] rounded-md text-sm py-1">Buy</button>
+              <i class=" flex-1 border border-[#FF8906] text-[#FF8906] p-1 h-7 rounded-md" data-feather="shopping-cart"></i>
             </div>
           </div>
         </div>
 
-        <div class="staff-image"></div>
-      </div>
-
-      <div class="favorite-product">
-        <div class="title">
-          <h1>Here is People's <span>Favorite</span></h1>
-          <hr />
-          <p>
-            Let's choose and have a bit taste of poeple's favorite. It might be
-            yours too!
-          </p>
+        <div class="relative flex justify-center">
+          <div class="w-56 bg-orange-100">
+            <img src="./assets/home-product2.jpg" alt="" />
+          </div>
+          <div class="absolute w-11/12 bg-white shadow-md top-44 p-2 flex flex-col gap-2">
+            <h1 class="font-semibold" id="product-name">Hazelnut Latte</h1>
+            <p class="text-[0.7rem] text-[#4F5665]">
+              You can explore the menu that we provide with fun and have their
+              own taste and make your day better.
+            </p>
+            <h1 class="text-[#FF8906] font-semibold" id="product-price">IDR 20.000</h1>
+            <div class="flex items-center gap-2">
+              <button class="w-9/12 bg-[#FF8906] rounded-md text-sm py-1">Buy</button>
+              <i class=" flex-1 border border-[#FF8906] text-[#FF8906] p-1 h-7 rounded-md" data-feather="shopping-cart"></i>
+            </div>
+          </div>
         </div>
 
-        <div class="list-products">
-          <div class="product">
-            <div>
-              <img src="./assets/home-product1.jpg" alt="" />
-            </div>
-            <div class="product-details">
-              <h1 id="product-name">Hazelnut Latte</h1>
-              <p>
-                You can explore the menu that we provide with fun and have their
-                own taste and make your day better.
-              </p>
-              <h1 id="product-price">IDR 20.000</h1>
-              <div class="order">
-                <button>Buy</button>
-                <i data-feather="shopping-cart"></i>
-              </div>
+        <div class="relative flex justify-center">
+          <div class="w-56 bg-orange-100">
+            <img src="./assets/home-product3.jpg" alt="" />
+          </div>
+          <div class="absolute w-11/12 bg-white shadow-md top-44 p-2 flex flex-col gap-2">
+            <h1 class="font-semibold" id="product-name">Hazelnut Latte</h1>
+            <p class="text-[0.7rem] text-[#4F5665]">
+              You can explore the menu that we provide with fun and have their
+              own taste and make your day better.
+            </p>
+            <h1 class="text-[#FF8906] font-semibold" id="product-price">IDR 20.000</h1>
+            <div class="flex items-center gap-2">
+              <button class="w-9/12 bg-[#FF8906] rounded-md text-sm py-1">Buy</button>
+              <i class=" flex-1 border border-[#FF8906] text-[#FF8906] p-1 h-7 rounded-md" data-feather="shopping-cart"></i>
             </div>
           </div>
+        </div>
 
-          <div class="product">
-            <div>
-              <img src="./assets/home-product2.jpg" alt="" />
-            </div>
-            <div class="product-details">
-              <h1 id="product-name">Hazelnut Latte</h1>
-              <p>
-                You can explore the menu that we provide with fun and have their
-                own taste and make your day better.
-              </p>
-              <h1 id="product-price">IDR 20.000</h1>
-              <div class="order">
-                <button>Buy</button>
-                <i data-feather="shopping-cart"></i>
-              </div>
-            </div>
+        <div class="relative flex justify-center">
+          <div class="w-56 bg-orange-100">
+            <img src="./assets/home-product1.jpg" alt="" />
           </div>
-
-          <div class="product">
-            <div>
-              <img src="./assets/home-product3.jpg" alt="" />
-            </div>
-            <div class="product-details">
-              <h1 id="product-name">Hazelnut Latte</h1>
-              <p>
-                You can explore the menu that we provide with fun and have their
-                own taste and make your day better.
-              </p>
-              <h1 id="product-price">IDR 20.000</h1>
-              <div class="order">
-                <button>Buy</button>
-                <i data-feather="shopping-cart"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="product">
-            <div>
-              <img src="./assets/home-product4.png" alt="" />
-            </div>
-            <div class="product-details">
-              <h1 id="product-name">Hazelnut Latte</h1>
-              <p>
-                You can explore the menu that we provide with fun and have their
-                own taste and make your day better.
-              </p>
-              <h1 id="product-price">IDR 20.000</h1>
-              <div class="order">
-                <button>Buy</button>
-                <i data-feather="shopping-cart"></i>
-              </div>
+          <div class="absolute w-11/12 bg-white shadow-md top-44 p-2 flex flex-col gap-2">
+            <h1 class="font-semibold" id="product-name">Hazelnut Latte</h1>
+            <p class="text-[0.7rem] text-[#4F5665]">
+              You can explore the menu that we provide with fun and have their
+              own taste and make your day better.
+            </p>
+            <h1 class="text-[#FF8906] font-semibold" id="product-price">IDR 20.000</h1>
+            <div class="flex items-center gap-2">
+              <button class="w-9/12 bg-[#FF8906] rounded-md text-sm py-1">Buy</button>
+              <i class=" flex-1 border border-[#FF8906] text-[#FF8906] p-1 h-7 rounded-md" data-feather="shopping-cart"></i>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- introduction end -->
+    <!-- favorite product end -->
 
     <!-- map start -->
-    <section class="map">
-      <div class="title">
-        <h1><span>Visit Our Store</span> in the Spot on the Map Below</h1>
-        <hr />
-        <p>
-          You can explore the menu that we provide with fun and have their own
-          taste and make your day better.
-        </p>
-      </div>
-      <div>
-        <img src="/assets/home-map.png" />
-        <img src="./assets/map-responsive.png" />
-      </div>
+    <section class="h-screen flex flex-col items-center justify-center w-full bg-[#E8E8E84D] gap-12">
+        <div class="flex flex-col items-center gap-4">
+          <h1 class="text-5xl font-medium"><span class="text-[#8E6447]">Visit Our Store</span class="text-[#8E6447]"> in the Spot on the Map Below</h1>
+          <hr class="border-[#ff8906] border-4 w-16"/>
+          <p class="text-[#4f5665] text-center">
+            You can explore the menu that we provide with fun and have their own <br>
+            taste and make your day better.
+          </p>
+        </div>
+
+        <div class="flex justify-center">
+          <img class="w-3/5" src="/assets/home-map.png" />
+          <img class="hidden" src="./assets/map-responsive.png" />
+        </div>
     </section>
     <!-- map end -->
 
     <!-- testimonial start -->
-    <section class="testimonial">
-      <div id="customer-image">
+    <section class="flex justify-center items-center bg-gradient-to-b from-[#323436] to-[#0B0909] w-full h-[30rem]">
+      <div class="flex w-11/12 gap-4">
         <div>
-          <img src="./assets/home-customer-image1.jpg" alt="" />
+            <img class="w-[30rem]" src="./assets/home-customer-image1.jpg" alt="" />
         </div>
-      </div>
-      <div class="testi">
-        <p id="testi-title">TESTIMONIAL</p>
-        <h1 id="customer-name">Viezh Robert</h1>
-        <p id="role">Manager Coffe Shop</p>
-        <p id="review-message">
-          “Wow... I am very happy to spend my whole day here. the Wi-fi is good,
-          and the coffee and meals tho. I like it here!! Very recommended!
-        </p>
-        <div class="rating">
-          <div class="rating-stars">
-            <div>
-              <img src="/assets/star.png" />
+        
+        <div class="flex flex-col gap-4 w-[30rem]">
+          <p class="text-white">TESTIMONIAL</p>
+          <h1 class="text-white text-4xl border-l-4 border-[#FF8906] pl-4">Viezh Robert</h1>
+          <p class="text-[#FF8906]">Manager Coffe Shop</p>
+          <p class="text-white">
+            “Wow... I am very happy to spend my whole day here. the Wi-fi is good,
+            and the coffee and meals tho. I like it here!! Very recommended!
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="flex gap-4">
+              <div>
+                <img src="/assets/star.png" />
+              </div>
+              <div>
+                <img src="/assets/star.png" />
+              </div>
+              <div>
+                <img src="/assets/star.png" />
+              </div>
+              <div>
+                <img src="/assets/star.png" />
+              </div>
+              <div>
+                <img src="/assets/star.png" />
+              </div>
             </div>
-            <div>
-              <img src="/assets/star.png" />
+            <p class="text-white" id="rating-number">5.0</p>
+          </div>
+          <div class="flex gap-2">
+            <div class="flex justify-center items-center bg-white rounded-full h-8 w-8">
+              <i class="h-5" data-feather="arrow-left"></i>
             </div>
-            <div>
-              <img src="/assets/star.png" />
-            </div>
-            <div>
-              <img src="/assets/star.png" />
-            </div>
-            <div>
-              <img src="/assets/star.png" />
+
+            <div class="flex justify-center items-center bg-[#FF8906] rounded-full h-8 w-8">
+              <i class="h-5"  data-feather="arrow-right"></i>
             </div>
           </div>
-          <p id="rating-number">5.0</p>
-        </div>
-        <div class="button-swipe">
-          <i data-feather="arrow-left"></i>
-          <i data-feather="arrow-right"></i>
-        </div>
-        <div class="page-indicator">
-          <div class="current-page">
-            <div id="left-corner"></div>
-            <div id="right-corner"></div>
+          <div class="flex gap-1">
+            <div class="bg-[#FF8906] w-8 h-2 rounded-md"></div>
+            <div class="bg-white w-2 h-2 rounded-md"></div>
+            <div class="bg-white w-2 h-2 rounded-md"></div>
+            <div class="bg-white w-2 h-2 rounded-md"></div>
           </div>
-          <div></div>
-          <div></div>
-          <div></div>
         </div>
       </div>
     </section>
     <!-- testimonial end -->
 
     <!-- footer start -->
-    <footer>
-      <div>
+    <footer class="flex justify-center items-center w-full h-80 bg-[#F8F8F8]">
+      <div class="flex flex-col w-11/12">
 
-        <div>
-          <div class="description">
-            <div class="logo">
+        <div class="flex gap-20">
+          <div class="flex flex-col gap-4 w-[21rem]">
+            <div class="flex gap-4">
               <div>
                 <img src="./assets/cup-coffe-icon.png" />
               </div>
@@ -306,35 +312,39 @@
                 <img src="./assets/text-logo.png" />
               </div>
             </div>
-            <p>
+            <p class="text-[#4F5665]">
               Coffee Shop is a store that sells some good meals, and especially
               coffee. We provide high quality beans
             </p>
           </div>
 
-          <div>
-            <div class="product-link">
-              <p>Product</p>
-              <a href="#">Our Product</a>
-              <a href="#">Pricing</a>
-              <a href="#">Location</a>
-              <a href="#">Countries</a>
-              <a href="#">Blog</a>
+          <div class="flex gap-20">
+            <div class="flex flex-col gap-4">
+              <p class="font-semibold">Product</p>
+              <div class="flex flex-col gap-2">
+                <a class="text-[#4F5665]" href="#">Our Product</a>
+                <a class="text-[#4F5665]" href="#">Pricing</a>
+                <a class="text-[#4F5665]" href="#">Location</a>
+                <a class="text-[#4F5665]" href="#">Countries</a>
+                <a class="text-[#4F5665]" href="#">Blog</a>
+              </div>
             </div>
 
-            <div class="engage">
-              <p>Engage</p>
-              <a href="#">Partner</a>
-              <a href="#">FAQ</a>
-              <a href="#">About Us</a>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
+            <div class="flex flex-col gap-4">
+              <p class="font-semibold">Engage</p>
+              <div class="flex flex-col gap-2">
+                <a class="text-[#4F5665]" href="#">Partner</a>
+                <a class="text-[#4F5665]" href="#">FAQ</a>
+                <a class="text-[#4F5665]" href="#">About Us</a>
+                <a class="text-[#4F5665]" href="#">Privacy Policy</a>
+                <a class="text-[#4F5665]" href="#">Terms of Service</a>
+              </div>
             </div>
           </div>
 
-          <div class="social-media">
-            <p>Social Media</p>
-            <div class="link-social-media">
+          <div class="flex flex-col gap-4">
+            <p class="font-semibold">Social Media</p>
+            <div class="flex gap-4">
               <a href="#"><img src="/assets/facebook-logo-circle.png" /></a>
               <a href="#"><img src="/assets/twitter-logo-circle.png" /></a>
               <a href="#"><img src="/assets/instagram-logo-circle.png" /></a>
@@ -342,7 +352,7 @@
           </div>
         </div>
 
-        <p id="copyright">&copy;2020CoffeeStore</p>
+        <p class="text-[#AFB5C0]" id="copyright">&copy;2020CoffeeStore</p>
 
       </div>
     </footer>
