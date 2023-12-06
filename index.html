@@ -18,7 +18,7 @@
       }
     </style>
   </head>
-  <body class="flex flex-col items-center">
+  <body class="relative flex flex-col items-center">
     <!-- nav start -->
     <nav class="fixed w-full h-14 flex justify-center bg-[#0B090921]">
       <div class="flex justify-between items-center w-11/12">
@@ -37,20 +37,30 @@
           </div>
         </div>
 
-        <div class="flex gap-4">
-          <div class="flex items-center gap-4">
-            <i class="text-white" data-feather="search"></i>
-            <i class="text-white" data-feather="shopping-cart"></i>
-            <i class=" hidden text-white" data-feather="list"></i>
-          </div>
-          <div class="flex items-center gap-4">
-            <a class="text-white border border-white py-2 px-3 text-sm rounded" href="./login.html" id="sign-in">Sign In</a>
-            <a class="bg-[#ff8906] py-2 px-3 text-sm rounded" href="./register.html" id="sign-up">Sign Up</a>
-          </div>
-        </div>
+        <div class="flex items-center gap-5">
+          <i class="text-white" data-feather="search"></i>
+          <i class="text-white" data-feather="shopping-cart"></i>
+          <i class="hidden text-white" data-feather="list"></i>
+          <a
+            class="text-white border border-white py-2 px-3 text-sm rounded"
+            href="./login.html"
+            id="sign-in"
+            >Sign In</a
+          >
+          <a
+            class="bg-[#ff8906] py-2 px-3 text-sm rounded"
+            href="./register.html"
+            id="sign-up"
+            >Sign Up</a
+          >
+      </div>
       </div>
     </nav>
     <!-- nav end -->
+
+    <div class="fixed flex justify-center items-center right-12 bottom-12 bg-[#ff8906] rounded-full p-2 w-12 h-12">
+      <i data-feather="message-circle"></i>
+    </div>
 
     <!-- landing page start -->
     <section class="flex h-screen w-full">
@@ -63,7 +73,9 @@
           </p>
           <div class="flex justify-between">
             <button class="bg-[#ff8906] py-2 px-3 rounded-md">Get Started</button>
-            <i class=" hidden bg-[#ff8906] rounded-full p-2 w-12 h-12" data-feather="message-circle"></i>
+            <div class="hidden flex justify-center items-center bg-[#ff8906] rounded-full p-2 w-12 h-12">
+              <i data-feather="message-circle"></i>
+            </div>
           </div>
           <div class="flex divide-x-2">
             <div class="flex-1 flex">
