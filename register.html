@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="flex m-0 p-0 h-[46rem]">
+    <div
+      class="bg-[url('assets/bg-register.jpg')] w-1/4 bg-center bg-cover"
+    ></div>
+
+    <div class="flex flex-1 items-center">
+      <div class="flex flex-col w-5/6 ml-12">
+
+        <div class="flex items-center gap-4 mb-8">
+          <div>
+            <img src="./assets/cup-coffe-icon.png" />
+          </div>
+          <div>
+            <img src="./assets/text-logo.png" alt="" />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <h1 class="text-[#8e6447] font-semibold text-xl">Register</h1>
+          <p class="text-[#4f5665] text-base">Fill out the form correctly</p>
+
+          <form class="flex flex-col gap-5">
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-[#0b132a] font-semibold text-sm"
+                for="full-name"
+                >Full Name</label
+              >
+              <div class="flex border border-[#dedede] rounded-lg p-2 gap-3 items-center">
+                <i class="text-[#4F5665] h-4" data-feather="user"></i>
+                <input
+                  class="w-full outline-none text-sm"
+                  id="full-name"
+                  type="text"
+                  placeholder="Enter Your Full Name"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label class="text-[#0b132a] font-semibold text-sm" for="email"
+                >Email</label
+              >
+              <div class="flex border border-[#dedede] rounded-lg p-2 gap-3 items-center">
+                <i class="text-[#4F5665] h-4" data-feather="mail"></i>
+                <input
+                  class="w-full outline-none text-sm"
+                  id="email"
+                  type="email"
+                  placeholder="Enter Your Email"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-[#0b132a] font-semibold text-sm"
+                for="password"
+                >Password</label
+              >
+              <div class="flex border border-[#dedede] rounded-lg p-2 gap-3 items-center">
+                <i class="text-[#4F5665] h-4" data-feather="lock"></i>
+                <input
+                  class="w-full outline-none text-sm"
+                  id="password"
+                  type="password"
+                  placeholder="Enter Your Password"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label
+                class="text-[#0b132a] font-semibold text-sm"
+                for="confirm-password"
+                >Confirm Password</label
+              >
+              <div class="flex border border-[#dedede] rounded-lg p-2 gap-3 items-center">
+                <i class="text-[#4F5665] h-4" data-feather="lock"></i>
+                <input
+                  class="w-full outline-none text-sm"
+                  id="confirm-password"
+                  type="password"
+                  placeholder="Enter Your Password Again"
+                />
+              </div>
+            </div>
+
+            <button
+              class="bg-[#ff8906] rounded-md p-2 text-base text-[#0b132a] font-medium"
+              type="submit"
+              id="register-login-submit"
+            >
+              Register
+            </button>
+          </form>
+
+          <div class="flex justify-center">
+            <p class="text-[#4f5665] text-sm">Have An Account?</p>
+            <a class="text-[#ff8906] text-sm" href="./login.html">Login</a>
+          </div>
+
+          <div class="grid grid-cols-3">
+            <hr class="border-[0.5px] border-[#dedede] h-0" />
+            <p class="text-[#aaaaaa] text-xs text-center">Or</p>
+            <hr class="border-[0.5px] border-[#dedede] h-0" />
+          </div>
+
+          <div class="flex justify-between gap-4">
+            <button
+              class="flex justify-center items-center gap-4 w-2/4 p-2 rounded shadow-md"
+              id="facebook"
+            >
+              <img src="/assets/facebook-logo.png" alt="" />
+              <p class="text-[#4f5665] text-semibold">Facebook</p>
+            </button>
+            <button
+              class="flex justify-center items-center gap-4 w-2/4 p-2 rounded shadow-md"
+              id="google"
+            >
+              <img src="/assets/google-logo.png" alt="" />
+              <p class="text-[#4f5665] text-semibold ">Google</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
