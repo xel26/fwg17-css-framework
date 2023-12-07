@@ -4,337 +4,368 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>History Order</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        @media screen and (max-width: 426px){
-            .history-order .container{
-                margin-top: 20%;
-            }
-            .history-order .header{
-                justify-content: space-between;
-            }
-            .history-order .header h1 {
-                font-size: 2rem;
-            }
-            .history-order .header p {
-                width: 2rem;
-                height: 2rem;
-                font-size: 0.8rem;
-            }
-
-            .history-order .wrap{
-                flex-direction: column;
-                gap: 2rem;
-            }
-            .history-order .wrap .left{
-                width: 100%;
-            }
-            .history-order .filter{
-                flex-direction: column-reverse;
-                gap: 1rem;
-            }
-            .history-order .filter-by-date{
-                width: 50%;
-                padding: 5px;
-            }
-            .history-order .filter-by-status{
-                width: 100%;
-                padding: 0.5rem;
-            }
-            .history-order .filter-by-status h4,
-            .history-order .filter-by-date h4{
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
-            .history-order .record img{
-                display: none;
-            }
-            .history-order .record{
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                padding-left: 3rem;
-                gap: 1rem;
-            }
-            .history-order .record a,
-            .history-order .record h5{
-                width: fit-content;
-                margin-top: 0;
-            }
-            .history-order .component{
-                gap: 0.2rem;
-            }
-            .history-order .component.status h5{
-                transform: none;
-            }
-        }
+      * {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
     </style>
   </head>
-  <body class="history-order">
+  <body class="flex flex-col items-center gap-10">
     <!-- nav start -->
-    <nav class="dark">
-      <div class="left-nav">
-        <div class="logo">
-          <img src="./assets/cup-coffee-icon-white.png" />
-          <img src="./assets/text-logo-white.png" />
+    <nav class="fixed w-full h-14 flex justify-center bg-black z-50">
+        <div class="flex justify-between items-center w-5/6">
+          <div class="flex gap-12">
+            <div class="flex gap-4">
+              <div>
+                <img src="./assets/cup-coffee-icon-white.png" />
+              </div>
+              <div>
+                <img src="./assets/text-logo-white.png" />
+              </div>
+            </div>
+            <div class="flex gap-12">
+              <a
+                href="#"
+                class="active:border-b-2 active:border-[#ff8906] text-white"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="active:border-b-2 active:border-[#ff8906] text-white"
+                >Product</a
+              >
+            </div>
+          </div>
+  
+          <div class="flex items-center gap-5">
+              <i class="text-white" data-feather="search"></i>
+              <i class="text-white" data-feather="shopping-cart"></i>
+              <i class="hidden text-white" data-feather="list"></i>
+              <a
+                class="text-white border border-white py-2 px-3 text-sm rounded"
+                href="./login.html"
+                id="sign-in"
+                >Sign In</a
+              >
+              <a
+                class="bg-[#ff8906] py-2 px-3 text-sm rounded"
+                href="./register.html"
+                id="sign-up"
+                >Sign Up</a
+              >
+          </div>
         </div>
-        <div class="navigation">
-          <a href="home" class="active">Home</a>
-          <a href="product">Product</a>
-        </div>
-      </div>
-
-      <div class="right-nav">
-        <div class="action">
-          <img src="./assets/search-icon.png" />
-          <img src="./assets/shopping-cart-icon.png" />
-          <img src="./assets/nav-option.png" />
-        </div>
-        <div class="authentication">
-          <a href="./login.html" id="sign-in">Sign In</a>
-          <a href="./register.html" id="sign-up">Sign Up</a>
-        </div>
-      </div>
-    </nav>
-    <!-- nav end -->
+      </nav>
+      <!-- nav end -->
 
 
     <!-- list history order start -->
-    <div class="container">
-        <div class="header">
-            <h1>History Order</h1>
-            <p>2</p>
+        <div class="header flex w-5/6 mt-24 gap-8 items-end">
+            <h1 class="text-4xl font-semibold">History Order</h1>
+            <div class="bg-[#E8E8E8] w-8 h-7 flex items-center justify-center">
+                <p>2</p>
+            </div>
         </div>
-        <div class="wrap">
-            <div class="left">
-                <div class="filter">
-                    <div class="filter-by-status">
-                        <h4 class="selected">On Progress</h4>
-                        <h4>Sending Goods</h4>
-                        <h4>Finish Order</h4>
+
+        <div class="flex w-5/6 gap-4">
+            <div class="left w-2/3 flex flex-col gap-10">
+                <div class="flex gap-12 justify-between">
+                    <div class="flex gap-4 bg-[#E8E8E899] p-3">
+                        <h4 class="bg-white p-1">On Progress</h4>
+                        <h4 class="bg-transparen p-1">Sending Goods</h4>
+                        <h4 class="bg-transparen p-1">Finish Order</h4>
                     </div>
 
-                    <div class="filter-by-date">
-                        <img src="/assets/Calendar.png">
+                    <div class="flex items-center justify-center bg-[#E8E8E899] p-3 gap-1">
+                        <i data-feather="calendar"></i>
                         <h4>January 2023</h4>
-                        <img src="/assets/arrow-down.png" alt="">
+                        <i data-feather="chevron-down"></i>
                     </div>
                 </div>
 
-                <div class="list-history-order">
-                    <div class="record">
-                        <img src="./assets/history-order-image.jpg">
-
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/glass.png">
-                                <p>No. Order</p>
-                            </div>
-                            <h5>#12354-09893</h5>
-                            <a href="#">Views Order Detail</a>
+                <div class="flex flex-col gap-4 h-[33.5rem]">
+                    <div class="flex gap-4 items-center p-2 bg-[#E8E8E84D] text-sm">
+                        <div>
+                            <img src="./assets/history-order-image.jpg">
                         </div>
 
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/calendar-gray.png">
-                                <p>Date</p>
+                        <div class="flex-1 flex flex-col gap-4">
+                            <div class="flex justify-between">
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="coffee"></i>
+                                        <p>No. Order</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">#12354-09893</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                       <i class="h-3.5" data-feather="calendar"></i>
+                                        <p>Date</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">23 January 2023</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="repeat"></i>
+                                        <p>Total</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">Idr 40.000</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="refresh-ccw"></i>
+                                        <p>Status</p>
+                                    </div>
+                                    <h5 class="font-semibold text-[#FF8906] text-xs bg-[#FF890633] p-1.5 rounded-3xl translate-y-[-0.3rem]">On Progress</h5>
+                                </div>
                             </div>
-                            <h5>23 January 2023</h5>
-                        </div>
 
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/total.png">
-                                <p>Total</p>
-                            </div>
-                            <h5>Idr 40.000</h5>
-                        </div>
-
-                        <div class="component status">
-                            <div class="lable">
-                                <img src="./assets/status.png">
-                                <p>Status</p>
-                            </div>
-                            <h5>On Progress</h5>
-                        </div>
-                    </div>
-
-                    <div class="record">
-                        <img src="./assets/history-order-image.jpg">
-
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/glass.png">
-                                <p>No. Order</p>
-                            </div>
-                            <h5>#12354-09893</h5>
-                            <a href="#">Views Order Detail</a>
-                        </div>
-
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/calendar-gray.png">
-                                <p>Date</p>
-                            </div>
-                            <h5>23 January 2023</h5>
-                        </div>
-
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/total.png">
-                                <p>Total</p>
-                            </div>
-                            <h5>Idr 40.000</h5>
-                        </div>
-
-                        <div class="component status">
-                            <div class="lable">
-                                <img src="./assets/status.png">
-                                <p>Status</p>
-                            </div>
-                            <h5>On Progress</h5>
+                            <a class="text-[#FF8906] underline" href="#">Views Order Detail</a>
                         </div>
                     </div>
 
-                    <div class="record">
-                        <img src="./assets/history-order-image.jpg">
-
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/glass.png">
-                                <p>No. Order</p>
-                            </div>
-                            <h5>#12354-09893</h5>
-                            <a href="#">Views Order Detail</a>
+                    <div class="flex gap-4 items-center p-2 bg-[#E8E8E84D] text-sm">
+                        <div>
+                            <img src="./assets/history-order-image.jpg">
                         </div>
 
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/calendar-gray.png">
-                                <p>Date</p>
+                        <div class="flex-1 flex flex-col gap-4">
+                            <div class="flex justify-between">
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="coffee"></i>
+                                        <p>No. Order</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">#12354-09893</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                       <i class="h-3.5" data-feather="calendar"></i>
+                                        <p>Date</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">23 January 2023</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="repeat"></i>
+                                        <p>Total</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">Idr 40.000</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="refresh-ccw"></i>
+                                        <p>Status</p>
+                                    </div>
+                                    <h5 class="font-semibold text-[#FF8906] text-xs bg-[#FF890633] p-1.5 rounded-3xl translate-y-[-0.3rem]">On Progress</h5>
+                                </div>
                             </div>
-                            <h5>23 January 2023</h5>
-                        </div>
 
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/total.png">
-                                <p>Total</p>
-                            </div>
-                            <h5>Idr 40.000</h5>
-                        </div>
-
-                        <div class="component status">
-                            <div class="lable">
-                                <img src="./assets/status.png">
-                                <p>Status</p>
-                            </div>
-                            <h5>On Progress</h5>
+                            <a class="text-[#FF8906] underline" href="#">Views Order Detail</a>
                         </div>
                     </div>
 
-                    <div class="record">
-                        <img src="./assets/history-order-image.jpg">
-
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/glass.png">
-                                <p>No. Order</p>
-                            </div>
-                            <h5>#12354-09893</h5>
-                            <a href="#">Views Order Detail</a>
+                    <div class="flex gap-4 items-center p-2 bg-[#E8E8E84D] text-sm">
+                        <div>
+                            <img src="./assets/history-order-image.jpg">
                         </div>
 
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/calendar-gray.png">
-                                <p>Date</p>
+                        <div class="flex-1 flex flex-col gap-4">
+                            <div class="flex justify-between">
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="coffee"></i>
+                                        <p>No. Order</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">#12354-09893</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                       <i class="h-3.5" data-feather="calendar"></i>
+                                        <p>Date</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">23 January 2023</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="repeat"></i>
+                                        <p>Total</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">Idr 40.000</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="refresh-ccw"></i>
+                                        <p>Status</p>
+                                    </div>
+                                    <h5 class="font-semibold text-[#FF8906] text-xs bg-[#FF890633] p-1.5 rounded-3xl translate-y-[-0.3rem]">On Progress</h5>
+                                </div>
                             </div>
-                            <h5>23 January 2023</h5>
+
+                            <a class="text-[#FF8906] underline" href="#">Views Order Detail</a>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 items-center p-2 bg-[#E8E8E84D] text-sm">
+                        <div>
+                            <img src="./assets/history-order-image.jpg">
                         </div>
 
-                        <div class="component">
-                            <div class="lable">
-                                <img src="./assets/total.png">
-                                <p>Total</p>
+                        <div class="flex-1 flex flex-col gap-4">
+                            <div class="flex justify-between">
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="coffee"></i>
+                                        <p>No. Order</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">#12354-09893</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                       <i class="h-3.5" data-feather="calendar"></i>
+                                        <p>Date</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">23 January 2023</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="repeat"></i>
+                                        <p>Total</p>
+                                    </div>
+                                    <h5 class="font-semibold text-black">Idr 40.000</h5>
+                                </div>
+        
+                                <div class="flex flex-col gap-2 text-[#4F5665]">
+                                    <div class="flex items-center gap-1">
+                                        <i class="h-3.5" data-feather="refresh-ccw"></i>
+                                        <p>Status</p>
+                                    </div>
+                                    <h5 class="font-semibold text-[#FF8906] text-xs bg-[#FF890633] p-1.5 rounded-3xl translate-y-[-0.3rem]">On Progress</h5>
+                                </div>
                             </div>
-                            <h5>Idr 40.000</h5>
-                        </div>
 
-                        <div class="component status">
-                            <div class="lable">
-                                <img src="./assets/status.png">
-                                <p>Status</p>
-                            </div>
-                            <h5>On Progress</h5>
+                            <a class="text-[#FF8906] underline" href="#">Views Order Detail</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="page-chooser">
-                    <h3 class="chosen">1</h3>
-                    <h3>2</h3>
-                    <h3>2</h3>
-                    <h3>4</h3>
-                    <div>
-                        <img src="/assets/arrow-right.png">
+                <div class="flex gap-2 justify-center">
+                    <div class="flex justify-center items-center bg-[#FF8906] rounded-full h-8 w-8">
+                      <h3>1</h3>
+                    </div>
+          
+                    <div class="flex justify-center items-center  text-[#A0A3BD] bg-[#E8E8E8] rounded-full h-8 w-8">
+                      <h3>2</h3>
+                    </div>
+          
+                    <div class="flex justify-center items-center  text-[#A0A3BD] bg-[#E8E8E8] rounded-full h-8 w-8">
+                      <h3>3</h3>
+                    </div>
+          
+                    <div class="flex justify-center items-center text-[#A0A3BD] bg-[#E8E8E8] rounded-full h-8 w-8">
+                      <h3>4</h3>
+                    </div>
+          
+                    <div class="flex justify-center items-center bg-[#FF8906] rounded-full h-8 w-8">
+                      <i class="text-white" data-feather="arrow-right"></i>
                     </div>
                 </div>
             </div>
 
-            <div class="right">
-                <div>
-                    <img src="/assets/message.png">
+            <div class="flex-1 flex flex-col gap-2 border border-[#E8E8E8] h-fit p-2">
+                <div class="relative bg-black rounded-2xl w-fit p-1.5 flex">
+                    <i class="text-white"  data-feather="message-square"></i>
+                    <i class="absolute top-2.5 text-[#FF8906] h-3" data-feather="align-right"></i>
                 </div>
-                <h4>Send Us Message</h4>
-                <p>if your unable to find answer or find your product quickly, please describe your problem and tell us. we will give you solution.</p>
-                <button>Send Message</button>
+                <h4 class="text-[#4F5665] font-bold text-sm">Send Us Message</h4>
+                <p class="text-[#4F5665] text-xs">if your unable to find answer or find your product quickly, please describe your problem and tell us. we will give you solution.</p>
+                <button class="text-xs bg-[#FF8906] p-1.5 rounded-md">Send Message</button>
             </div>
         </div>
-    </div>
     <!-- list history order end -->
 
 
     <!-- footer start -->
-    <footer>
-      <div class="description">
-        <div class="logo">
-          <img src="./assets/cup-coffe-icon.png" />
-          <img src="./assets/text-logo.png" />
+    <footer class="flex justify-center items-center w-full h-80 bg-[#F8F8F8]">
+        <div class="flex flex-col w-5/6">
+          <div class="flex gap-20">
+            <div class="flex flex-col gap-4 w-[21rem]">
+              <div class="flex gap-4">
+                <div>
+                  <img src="./assets/cup-coffe-icon.png" />
+                </div>
+                <div>
+                  <img src="./assets/text-logo.png" />
+                </div>
+              </div>
+              <p class="text-[#4F5665]">
+                Coffee Shop is a store that sells some good meals, and especially
+                coffee. We provide high quality beans
+              </p>
+            </div>
+  
+            <div class="flex gap-20">
+              <div class="flex flex-col gap-4">
+                <p class="font-semibold">Product</p>
+                <div class="flex flex-col gap-2">
+                  <a class="text-[#4F5665]" href="#">Our Product</a>
+                  <a class="text-[#4F5665]" href="#">Pricing</a>
+                  <a class="text-[#4F5665]" href="#">Location</a>
+                  <a class="text-[#4F5665]" href="#">Countries</a>
+                  <a class="text-[#4F5665]" href="#">Blog</a>
+                </div>
+              </div>
+  
+              <div class="flex flex-col gap-4">
+                <p class="font-semibold">Engage</p>
+                <div class="flex flex-col gap-2">
+                  <a class="text-[#4F5665]" href="#">Partner</a>
+                  <a class="text-[#4F5665]" href="#">FAQ</a>
+                  <a class="text-[#4F5665]" href="#">About Us</a>
+                  <a class="text-[#4F5665]" href="#">Privacy Policy</a>
+                  <a class="text-[#4F5665]" href="#">Terms of Service</a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="flex flex-col gap-4">
+              <p class="font-semibold">Social Media</p>
+              <div class="flex gap-4">
+                <a href="#"><img src="/assets/facebook-logo-circle.png" /></a>
+                <a href="#"><img src="/assets/twitter-logo-circle.png" /></a>
+                <a href="#"><img src="/assets/instagram-logo-circle.png" /></a>
+              </div>
+            </div>
+          </div>
+  
+          <p class="text-[#AFB5C0]" id="copyright">&copy;2020CoffeeStore</p>
         </div>
-        <p>
-          Coffee Shop is a store that sells some good meals, and especially
-          coffee. We provide high quality beans
-        </p>
-        <p id="copyright">&copy;2020CoffeeStore</p>
-      </div>
-
-      <div class="product-link">
-        <p>Product</p>
-        <a href="#">Our Product</a>
-        <a href="#">Pricing</a>
-        <a href="#">Location</a>
-        <a href="#">Countries</a>
-        <a href="#">Blog</a>
-      </div>
-
-      <div class="engage">
-        <p>Engage</p>
-        <a href="#">Partner</a>
-        <a href="#">FAQ</a>
-        <a href="#">About Us</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
-
-      <div class="social-media">
-        <p>Social Media</p>
-        <div class="link-social-media">
-          <a href="#"><img src="/assets/facebook-logo-circle.png" /></a>
-          <a href="#"><img src="/assets/twitter-logo-circle.png" /></a>
-          <a href="#"><img src="/assets/instagram-logo-circle.png" /></a>
-        </div>
-      </div>
-    </footer>
-    <!-- footer end -->
+      </footer>
+      <!-- footer end -->
+  
+      
+      <script>
+        feather.replace();
+      </script>
   </body>
 </html>
