@@ -18,7 +18,7 @@
       }
     </style>
   </head>
-  <body class="flex flex-col items-center gap-12">
+  <body class="flex flex-col items-center gap-6 sm:gap-12">
     <!-- nav start -->
     <nav class="fixed w-full h-14 flex justify-center bg-black z-50">
       <div class="flex justify-between items-center w-5/6">
@@ -32,46 +32,38 @@
             </div>
           </div>
           <div class="flex gap-12">
-            <a
-              href="#"
-              class="active:border-b-2 active:border-[#ff8906] text-white"
-              >Home</a
-            >
-            <a
-              href="#"
-              class="active:border-b-2 active:border-[#ff8906] text-white"
-              >Product</a
-            >
+            <a href="#" class="active:border-b-2 active:border-[#ff8906] text-white hidden sm:block">Home</a>
+            <a href="#" class="active:border-b-2 active:border-[#ff8906] text-white hidden sm:block">Product</a>
           </div>
         </div>
 
         <div class="flex items-center gap-5">
-          <i class="text-white" data-feather="search"></i>
+          <i class="text-white hidden sm:block" data-feather="search"></i>
           <i class="text-white" data-feather="shopping-cart"></i>
-          <i class="hidden text-white" data-feather="list"></i>
+          <i class="sm:hidden text-white" data-feather="menu"></i>
           <a
-            class="text-white border border-white py-2 px-3 text-sm rounded"
+            class="text-white border border-white py-2 px-3 text-sm rounded hidden sm:block"
             href="./login.html"
             id="sign-in"
             >Sign In</a
           >
           <a
-            class="bg-[#ff8906] py-2 px-3 text-sm rounded"
+            class="bg-[#ff8906] py-2 px-3 text-sm rounded hidden sm:block"
             href="./register.html"
             id="sign-up"
             >Sign Up</a
           >
-        </div>
+      </div>
       </div>
     </nav>
     <!-- nav end -->
 
 
     <!-- profile start -->
-      <h1 class="w-5/6 mt-24 text-3xl font-bold">Profile</h1>
+      <h1 class="w-5/6 mt-20 sm:mt-24 text-3xl font-bold">Profile</h1>
 
-      <form class="w-5/6 flex gap-4">
-        <div class="w-1/5 border border-[#E8E8E8] h-fit flex flex-col items-center p-4 gap-3">
+      <form class="w-5/6 flex flex-col sm:flex-row gap-4">
+        <div class="w-full sm:w-1/5 border border-[#E8E8E8] h-fit flex flex-col items-center p-4 gap-3">
           <div class="flex flex-col items-center">
             <h2 class="font-bold">Ghaluh Wizard</h2>
             <p class="text-xs text-[#4F5665]">ghaluhwizz@gmail.com</p>
@@ -83,7 +75,7 @@
           <p class="text-xs text-[#4F5665]">Since <span class="font-bold">20 January 2022</span></p>
         </div>
 
-        <div class="flex-1 border border-[#E8E8E8] p-4 flex flex-col gap-6 outline-none">
+        <div class="w-full sm:flex-1 border border-[#E8E8E8] p-4 flex flex-col gap-6 outline-none">
             <div class="flex flex-col gap-1">
               <label class="font-bold text-sm" for="full-name">Full Name</label>
               <div class="flex border border-[#DEDEDE] rounded-md text-[#4F5665] p-2 gap-2">
@@ -160,10 +152,11 @@
 
 
     <!-- footer start -->
-    <footer class="flex justify-center items-center w-full h-80 bg-[#F8F8F8]">
-      <div class="flex flex-col w-5/6">
-        <div class="flex gap-20">
-          <div class="flex flex-col gap-4 w-[21rem]">
+    <footer class="flex justify-center items-center w-full h-fit py-6 sm:h-fit sm:py-12 bg-[#F8F8F8]">
+      <div class="flex flex-col w-5/6 gap-4 sm:gap-0">
+
+        <div class="flex flex-col sm:flex-row gap-10 sm:gap-20">
+          <div class="flex flex-col gap-4 w-full sm:w-[21rem]">
             <div class="flex gap-4">
               <div>
                 <img src="./assets/cup-coffe-icon.png" />
@@ -213,6 +206,7 @@
         </div>
 
         <p class="text-[#AFB5C0]" id="copyright">&copy;2020CoffeeStore</p>
+
       </div>
     </footer>
     <!-- footer end -->
