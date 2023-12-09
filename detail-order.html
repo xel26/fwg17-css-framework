@@ -20,8 +20,8 @@
   </head>
   <body class="flex flex-col items-center">
     <!-- nav start -->
-    <nav class="fixed w-full h-14 flex justify-center bg-black z-50">
-      <div class="flex justify-between items-center w-5/6">
+    <nav class="fixed w-full h-fit py-3 sm:py-0 sm:h-14 flex flex-col gap-4 items-center bg-black z-50">
+      <div class="flex justify-between items-center sm:h-full w-5/6">
         <div class="flex gap-12">
           <div class="flex gap-4">
             <div>
@@ -32,15 +32,18 @@
             </div>
           </div>
           <div class="flex gap-12">
-            <a href="#" class="active:border-b-2 active:border-[#ff8906] text-white hidden sm:block">Home</a>
-            <a href="#" class="active:border-b-2 active:border-[#ff8906] text-white hidden sm:block">Product</a>
+            <a href="#" class="home focus:outline-none focus:border-b-2 focus:border-[#ff8906] text-white hidden sm:block">Home</a>
+            <a href="#" class="product focus:outline-none focus:border-b-2 focus:border-[#ff8906] text-white hidden sm:block">Product</a>
           </div>
         </div>
 
-        <div class="flex items-center gap-5">
-          <i class="text-white hidden sm:block" data-feather="search"></i>
+        <div class="relative flex items-center gap-5 sm:w-[32rem] justify-end">
+          <div id="search-input" class="hidden absolute flex items-center left-12 border border-white rounded w-60 py-1 px-1.5">
+            <input class="bg-transparent text-white placeholder-white text-base w-52 flex px-1 outline-none " type="text" placeholder="search">
+          </div>
+          <i id="search-icon" class="text-white hidden sm:block z-50" data-feather="search"></i>
           <i class="text-white" data-feather="shopping-cart"></i>
-          <i class="sm:hidden text-white" data-feather="menu"></i>
+          <i id="menu" class="sm:hidden text-white" data-feather="menu"></i>
           <a
             class="text-white border border-white py-2 px-3 text-sm rounded hidden sm:block"
             href="./login.html"
@@ -54,6 +57,29 @@
             >Sign Up</a
           >
       </div>
+      </div>
+
+      <!-- nav mobile -->
+      <div id="more-nav-menu" class="hidden sm:hidden flex flex-col gap-3 w-5/6 h-fit">
+        <div class="flex-1 flex items-center gap-2 w-full border border-white rounded py-1 px-2">
+          <i class="text-white h-4" data-feather="search"></i>
+          <input class="bg-transparent text-white text-sm outline-none placeholder-white w-full" type="text" placeholder="search">
+        </div>
+
+        <div class="flex gap-4">
+          <a
+          class="flex-1 text-white border border-white py-1 px-2 text-sm rounded w-full text-center"
+          href="./login.html"
+          id="sign-in"
+          >Sign In</a
+        >
+        <a
+          class="flex-1 bg-[#ff8906] py-1 px-2 text-sm rounded w-full text-center"
+          href="./register.html"
+          id="sign-up"
+          >Sign Up</a
+        >
+        </div>
       </div>
     </nav>
     <!-- nav end -->
@@ -76,13 +102,15 @@
               <i class="h-5" data-feather="user"></i>
               <p class="text-xs sm:text-base">Full Name</p>
             </div>
-            <h5 class="font-bold text-xs sm:text-base">Ghaluh Wizard Anggoro</h5>
+            <h5 class="font-bold text-xs sm:text-base">
+              Ghaluh Wizard Anggoro
+            </h5>
           </div>
 
           <div class="flex justify-between py-3">
             <div class="flex gap-3 text-[#4F5665] items-center">
               <i class="h-4" data-feather="map-pin"></i>
-              <p  class="text-xs sm:text-base">Address</p>
+              <p class="text-xs sm:text-base">Address</p>
             </div>
             <h5 class="font-bold text-xs sm:text-base">Griya bandung indah</h5>
           </div>
@@ -90,7 +118,7 @@
           <div class="flex justify-between py-3">
             <div class="flex gap-3 text-[#4F5665] items-center">
               <i class="h-4" data-feather="phone-call"></i>
-              <p  class="text-xs sm:text-base">Phone</p>
+              <p class="text-xs sm:text-base">Phone</p>
             </div>
             <h5 class="font-bold text-xs sm:text-base">082116304338</h5>
           </div>
@@ -98,7 +126,7 @@
           <div class="flex justify-between py-3">
             <div class="flex gap-3 text-[#4F5665] items-center">
               <i class="h-4" data-feather="credit-card"></i>
-              <p  class="text-xs sm:text-base">Payment Method</p>
+              <p class="text-xs sm:text-base">Payment Method</p>
             </div>
             <h5 class="font-bold text-xs sm:text-base">Cash</h5>
           </div>
@@ -106,7 +134,7 @@
           <div class="flex justify-between py-3">
             <div class="flex gap-3 text-[#4F5665] items-center">
               <i class="h-4" data-feather="truck"></i>
-              <p  class="text-xs sm:text-base text-xs sm:text-base">Shipping</p>
+              <p class="text-xs sm:text-base text-xs sm:text-base">Shipping</p>
             </div>
             <h5 class="font-bold text-xs sm:text-base">Dine In</h5>
           </div>
@@ -116,104 +144,159 @@
               <i class="h-4" data-feather="refresh-ccw"></i>
               <p class="text-xs sm:text-base">Status</p>
             </div>
-            <h5 class="font-bold text-[#00A700] text-[0.6rem] sm:text-xs bg-[#00A70033] py-1 px-2 rounded-full flex items-center">Done</h5>
+            <h5
+              class="font-bold text-[#00A700] text-[0.6rem] sm:text-xs bg-[#00A70033] py-1 px-2 rounded-full flex items-center"
+            >
+              Done
+            </h5>
           </div>
 
           <div class="flex justify-between py-3">
             <p class="text-[#4F5665] text-xs sm:text-base">Total Transaksi</p>
-            <h5 class="font-bold text-[#FF8906] text-xs sm:text-base">Idr 40.000</h5>
+            <h5 class="font-bold text-[#FF8906] text-xs sm:text-base">
+              Idr 40.000
+            </h5>
           </div>
         </div>
       </div>
 
       <div class="flex flex-col gap-4">
-          <h4 class="font-semibold">Your Order</h4>
+        <h4 class="font-semibold">Your Order</h4>
 
-        <div class="flex flex-col gap-3 sm:gap-5 overflow-y-scroll h-[22rem] sm:h-[21rem]">
-          <div class="relative flex items-center gap-2 sm:gap-4 bg-[#E8E8E84D] p-2">
+        <div
+          class="flex flex-col gap-3 sm:gap-5 overflow-y-auto max-h-[22rem] sm:max-h-[21rem]">
+          <div
+            class="relative flex items-center gap-2 sm:gap-4 bg-[#E8E8E84D] p-2">
             <div class="">
               <img class="w-24 sm:w-36" src="./assets/checkout-image.jpg" />
             </div>
             <div class="flex-1 flex flex-col gap-2 sm:gap-3 justify-center">
-              <div class="bg-[#D00000] text-white rounded-3xl text-[0.6rem] sm:text-xs p-1 sm:p-1.5 w-fit">
+              <div
+                class="bg-[#D00000] text-white rounded-3xl text-[0.6rem] sm:text-xs p-1 sm:p-1.5 w-fit"
+              >
                 <h1>FLASH SALE!</h1>
               </div>
               <h4 class="font-bold text-xs sm:text-base">Hazelnut Latte</h4>
-              <div class="flex divide-x text-xs sm:text-sm text-[#4F5665] divide-[#4F5665] w-48 sm:w-60">
+              <div
+                class="flex divide-x text-xs sm:text-sm text-[#4F5665] divide-[#4F5665] w-48 sm:w-60"
+              >
                 <p class="pr-3">2pcs</p>
                 <p class="flex-1 flex justify-center">Regular</p>
                 <p class="flex justify-center px-3">Ice</p>
                 <p class="flex-1 flex justify-center">Dine in</p>
               </div>
               <div class="flex items-center gap-4">
-                <h1 class="text-[#D00000] text-[0.6rem] sm:text-xs font-semibold line-through">IDR 40.000</h1>
-                <h1 class="text-[#FF8906] font-semibold text-xs sm:text-base" id="product-price">IDR 10.000</h1>
+                <h1
+                  class="text-[#D00000] text-[0.6rem] sm:text-xs font-semibold line-through"
+                >
+                  IDR 40.000
+                </h1>
+                <h1
+                  class="text-[#FF8906] font-semibold text-xs sm:text-base"
+                  id="product-price"
+                >
+                  IDR 10.000
+                </h1>
               </div>
             </div>
           </div>
 
-          <div class="relative flex items-center gap-2 sm:gap-4 bg-[#E8E8E84D] p-2">
+          <div
+            class="relative flex items-center gap-2 sm:gap-4 bg-[#E8E8E84D] p-2">
             <div class="">
               <img class="w-24 sm:w-36" src="./assets/checkout-image.jpg" />
             </div>
             <div class="flex-1 flex flex-col gap-2 sm:gap-3 justify-center">
-              <div class="bg-[#D00000] text-white rounded-3xl text-[0.6rem] sm:text-xs p-1 sm:p-1.5 w-fit">
+              <div
+                class="bg-[#D00000] text-white rounded-3xl text-[0.6rem] sm:text-xs p-1 sm:p-1.5 w-fit"
+              >
                 <h1>FLASH SALE!</h1>
               </div>
               <h4 class="font-bold text-xs sm:text-base">Hazelnut Latte</h4>
-              <div class="flex divide-x text-xs sm:text-sm text-[#4F5665] divide-[#4F5665] w-48 sm:w-60">
+              <div
+                class="flex divide-x text-xs sm:text-sm text-[#4F5665] divide-[#4F5665] w-48 sm:w-60"
+              >
                 <p class="pr-3">2pcs</p>
                 <p class="flex-1 flex justify-center">Regular</p>
                 <p class="flex justify-center px-3">Ice</p>
                 <p class="flex-1 flex justify-center">Dine in</p>
               </div>
               <div class="flex items-center gap-4">
-                <h1 class="text-[#D00000] text-[0.6rem] sm:text-xs font-semibold line-through">IDR 40.000</h1>
-                <h1 class="text-[#FF8906] font-semibold text-xs sm:text-base" id="product-price">IDR 10.000</h1>
+                <h1
+                  class="text-[#D00000] text-[0.6rem] sm:text-xs font-semibold line-through"
+                >
+                  IDR 40.000
+                </h1>
+                <h1
+                  class="text-[#FF8906] font-semibold text-xs sm:text-base"
+                  id="product-price"
+                >
+                  IDR 10.000
+                </h1>
               </div>
             </div>
           </div>
 
-          <div class="relative flex items-center gap-2 sm:gap-4 bg-[#E8E8E84D] p-2">
+          <div
+            class="relative flex items-center gap-2 sm:gap-4 bg-[#E8E8E84D] p-2">
             <div class="">
               <img class="w-24 sm:w-36" src="./assets/checkout-image.jpg" />
             </div>
             <div class="flex-1 flex flex-col gap-2 sm:gap-3 justify-center">
-              <div class="bg-[#D00000] text-white rounded-3xl text-[0.6rem] sm:text-xs p-1 sm:p-1.5 w-fit">
+              <div
+                class="bg-[#D00000] text-white rounded-3xl text-[0.6rem] sm:text-xs p-1 sm:p-1.5 w-fit">
                 <h1>FLASH SALE!</h1>
               </div>
               <h4 class="font-bold text-xs sm:text-base">Hazelnut Latte</h4>
-              <div class="flex divide-x text-xs sm:text-sm text-[#4F5665] divide-[#4F5665] w-48 sm:w-60">
+              <div
+                class="flex divide-x text-xs sm:text-sm text-[#4F5665] divide-[#4F5665] w-48 sm:w-60">
                 <p class="pr-3">2pcs</p>
                 <p class="flex-1 flex justify-center">Regular</p>
                 <p class="flex justify-center px-3">Ice</p>
                 <p class="flex-1 flex justify-center">Dine in</p>
               </div>
               <div class="flex items-center gap-4">
-                <h1 class="text-[#D00000] text-[0.6rem] sm:text-xs font-semibold line-through">IDR 40.000</h1>
-                <h1 class="text-[#FF8906] font-semibold text-xs sm:text-base" id="product-price">IDR 10.000</h1>
+                <h1
+                  class="text-[#D00000] text-[0.6rem] sm:text-xs font-semibold line-through">
+                  IDR 40.000
+                </h1>
+                <h1
+                  class="text-[#FF8906] font-semibold text-xs sm:text-base"
+                  id="product-price">
+                  IDR 10.000
+                </h1>
               </div>
             </div>
           </div>
 
-          <div class="relative flex items-center gap-2 sm:gap-4 bg-[#E8E8E84D] p-2">
+          <div
+            class="relative flex items-center gap-2 sm:gap-4 bg-[#E8E8E84D] p-2">
             <div class="">
               <img class="w-24 sm:w-36" src="./assets/checkout-image.jpg" />
             </div>
             <div class="flex-1 flex flex-col gap-2 sm:gap-3 justify-center">
-              <div class="bg-[#D00000] text-white rounded-3xl text-[0.6rem] sm:text-xs p-1 sm:p-1.5 w-fit">
+              <div
+                class="bg-[#D00000] text-white rounded-3xl text-[0.6rem] sm:text-xs p-1 sm:p-1.5 w-fit">
                 <h1>FLASH SALE!</h1>
               </div>
               <h4 class="font-bold text-xs sm:text-base">Hazelnut Latte</h4>
-              <div class="flex divide-x text-xs sm:text-sm text-[#4F5665] divide-[#4F5665] w-48 sm:w-60">
+              <div
+                class="flex divide-x text-xs sm:text-sm text-[#4F5665] divide-[#4F5665] w-48 sm:w-60">
                 <p class="pr-3">2pcs</p>
                 <p class="flex-1 flex justify-center">Regular</p>
                 <p class="flex justify-center px-3">Ice</p>
                 <p class="flex-1 flex justify-center">Dine in</p>
               </div>
               <div class="flex items-center gap-4">
-                <h1 class="text-[#D00000] text-[0.6rem] sm:text-xs font-semibold line-through">IDR 40.000</h1>
-                <h1 class="text-[#FF8906] font-semibold text-xs sm:text-base" id="product-price">IDR 10.000</h1>
+                <h1
+                  class="text-[#D00000] text-[0.6rem] sm:text-xs font-semibold line-through">
+                  IDR 40.000
+                </h1>
+                <h1
+                  class="text-[#FF8906] font-semibold text-xs sm:text-base"
+                  id="product-price">
+                  IDR 10.000
+                </h1>
               </div>
             </div>
           </div>
@@ -223,9 +306,9 @@
     <!-- list history order end -->
 
     <!-- footer start -->
-    <footer class="flex justify-center items-center w-full h-fit py-6 sm:h-fit sm:py-12 bg-[#F8F8F8]">
+    <footer
+      class="flex justify-center items-center w-full h-fit py-6 sm:h-fit sm:py-12 bg-[#F8F8F8]">
       <div class="flex flex-col w-5/6 gap-4 sm:gap-0">
-
         <div class="flex flex-col sm:flex-row gap-10 sm:gap-20">
           <div class="flex flex-col gap-4 w-full sm:w-[21rem]">
             <div class="flex gap-4">
@@ -277,13 +360,33 @@
         </div>
 
         <p class="text-[#AFB5C0]" id="copyright">&copy;2020CoffeeStore</p>
-
       </div>
     </footer>
     <!-- footer end -->
 
     <script>
       feather.replace();
+
+      // search input nav desktop
+      const searchIcon = document.querySelector('#search-icon')
+      const searchInput = document.querySelector('#search-input')
+      const input = document.querySelector('#search-input input')
+
+      searchIcon.addEventListener('click', () => {
+        searchInput.classList.toggle('hidden')
+        input.value = ''
+      })
+
+
+      // nav mobile
+      const menu = document.querySelector('#menu')
+      const moreMenu = document.querySelector('#more-nav-menu')
+      const inputMobile = document.querySelector('#more-nav-menu input')
+
+      menu.addEventListener('click', () => {
+        moreMenu.classList.toggle('hidden')
+        inputMobile.value = ''
+      })
     </script>
   </body>
 </html>

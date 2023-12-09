@@ -20,8 +20,8 @@
   </head>
   <body class="flex flex-col items-center gap-6 sm:gap-10">
     <!-- nav start -->
-    <nav class="fixed w-full h-14 flex justify-center bg-black z-50">
-      <div class="flex justify-between items-center w-5/6">
+    <nav class="fixed w-full h-fit py-3 sm:py-0 sm:h-14 flex flex-col gap-4 items-center bg-black z-50">
+      <div class="flex justify-between items-center sm:h-full w-5/6">
         <div class="flex gap-12">
           <div class="flex gap-4">
             <div>
@@ -32,23 +32,18 @@
             </div>
           </div>
           <div class="flex gap-12">
-            <a
-              href="#"
-              class="active:border-b-2 active:border-[#ff8906] text-white hidden sm:block"
-              >Home</a
-            >
-            <a
-              href="#"
-              class="active:border-b-2 active:border-[#ff8906] text-white hidden sm:block"
-              >Product</a
-            >
+            <a href="#" class="home focus:outline-none focus:border-b-2 focus:border-[#ff8906] text-white hidden sm:block">Home</a>
+            <a href="#" class="product focus:outline-none focus:border-b-2 focus:border-[#ff8906] text-white hidden sm:block">Product</a>
           </div>
         </div>
 
-        <div class="flex items-center gap-5">
-          <i class="text-white hidden sm:block" data-feather="search"></i>
+        <div class="relative flex items-center gap-5 sm:w-[32rem] justify-end">
+          <div id="search-input" class="hidden absolute flex items-center left-12 border border-white rounded w-60 py-1 px-1.5">
+            <input class="bg-transparent text-white placeholder-white text-base w-52 flex px-1 outline-none " type="text" placeholder="search">
+          </div>
+          <i id="search-icon" class="text-white hidden sm:block z-50" data-feather="search"></i>
           <i class="text-white" data-feather="shopping-cart"></i>
-          <i class="sm:hidden text-white" data-feather="menu"></i>
+          <i id="menu" class="sm:hidden text-white" data-feather="menu"></i>
           <a
             class="text-white border border-white py-2 px-3 text-sm rounded hidden sm:block"
             href="./login.html"
@@ -61,6 +56,29 @@
             id="sign-up"
             >Sign Up</a
           >
+      </div>
+      </div>
+
+      <!-- nav mobile -->
+      <div id="more-nav-menu" class="hidden sm:hidden flex flex-col gap-3 w-5/6 h-fit">
+        <div class="flex-1 flex items-center gap-2 w-full border border-white rounded py-1 px-2">
+          <i class="text-white h-4" data-feather="search"></i>
+          <input class="bg-transparent text-white text-sm outline-none placeholder-white w-full" type="text" placeholder="search">
+        </div>
+
+        <div class="flex gap-4">
+          <a
+          class="flex-1 text-white border border-white py-1 px-2 text-sm rounded w-full text-center"
+          href="./login.html"
+          id="sign-in"
+          >Sign In</a
+        >
+        <a
+          class="flex-1 bg-[#ff8906] py-1 px-2 text-sm rounded w-full text-center"
+          href="./register.html"
+          id="sign-up"
+          >Sign Up</a
+        >
         </div>
       </div>
     </nav>
@@ -84,22 +102,22 @@
           class="flex flex-col-reverse sm:flex-row gap-y-4 sm:gap-12 justify-between"
         >
           <div
-            class="flex justify-between sm:gap-4 bg-[#E8E8E899] p-1.5 sm:p-3"
+            class="flex flex-col items-start gap-2 w-fit sm:w-auto sm:flex-row sm:justify-between sm:gap-4 bg-[#E8E8E899] p-1.5 sm:p-3"
           >
-            <h4 class="bg-white p-1 text-xs sm:text-base">On Progress</h4>
-            <h4 class="bg-transparen p-1 text-xs sm:text-base">
+            <button class="focus:bg-white bg-transparen p-1 text-xs sm:text-base font-semibold transition-all">On Progress</button>
+            <button class="focus:bg-white bg-transparen p-1 text-xs sm:text-base font-semibold transition-all">
               Sending Goods
-            </h4>
-            <h4 class="bg-transparen p-1 text-xs sm:text-base">Finish Order</h4>
+            </button>
+            <button class="focus:bg-white bg-transparen p-1 text-xs sm:text-base font-semibold transition-all">Finish Order</button>
           </div>
 
-          <div
-            class="w-fit sm:w-auto flex items-center justify-center bg-[#E8E8E899] p-1.5 sm:p-3 gap-1"
+          <button
+            class="w-fit sm:w-auto flex items-center justify-center bg-[#E8E8E899] p-1.5 sm:p-3 gap-1 font-semibold"
           >
             <i class="h-4 sm:h-auto" data-feather="calendar"></i>
             <h4 class="text-xs sm:text-base">January 2023</h4>
             <i class="h-4 sm:h-auto" data-feather="chevron-down"></i>
-          </div>
+          </button>
         </div>
 
         <div class="flex flex-col gap-4 h-fit sm:h-[33.5rem]">
@@ -336,36 +354,34 @@
           </div>
         </div>
 
-        <div class="flex gap-2 justify-center">
-          <div
-            class="flex justify-center items-center bg-[#FF8906] text-xs sm:text-sm rounded-full h-6 w-6 sm:h-8 sm:w-8"
-          >
+        <div class="flex justify-center gap-2">
+          <button
+            class="default-focus flex justify-center items-center bg-[#E8E8E8] text-[#A0A3BD] focus:bg-[#FF8906] focus:text-black focus:outline-[#FF8906] active:scale-90 transition-all text-xs sm:text-sm rounded-full h-6 w-6 sm:h-8 sm:w-8">
             <h3>1</h3>
-          </div>
+          </button>
 
-          <div
-            class="flex justify-center items-center text-[#A0A3BD] text-xs sm:text-sm bg-[#E8E8E8] rounded-full h-6 w-6 sm:h-8 sm:w-8"
-          >
+          <button
+            class="flex justify-center items-center text-[#A0A3BD] text-xs sm:text-sm bg-[#E8E8E8] focus:bg-[#FF8906] focus:text-black active:scale-90 transition-all rounded-full h-6 w-6 sm:h-8 sm:w-8">
             <h3>2</h3>
-          </div>
+          </button>
 
-          <div
-            class="flex justify-center items-center text-[#A0A3BD] text-xs sm:text-sm bg-[#E8E8E8] rounded-full h-6 w-6 sm:h-8 sm:w-8"
-          >
-            <h3>2</h3>
-          </div>
+          <button
+            class="flex justify-center items-center text-[#A0A3BD] text-xs sm:text-sm bg-[#E8E8E8] focus:bg-[#FF8906] focus:text-black active:scale-90 transition-all rounded-full h-6 w-6 sm:h-8 sm:w-8">
+            <h3>3</h3>
+          </button>
 
-          <div
-            class="flex justify-center items-center text-[#A0A3BD] text-xs sm:text-sm bg-[#E8E8E8] rounded-full h-6 w-6 sm:h-8 sm:w-8"
-          >
+          <button
+            class="flex justify-center items-center text-[#A0A3BD] text-xs sm:text-sm bg-[#E8E8E8] focus:bg-[#FF8906] focus:text-black active:scale-90 transition-all rounded-full h-6 w-6 sm:h-8 sm:w-8">
             <h3>4</h3>
-          </div>
+          </button>
 
-          <div
-            class="flex justify-center items-center bg-[#FF8906] rounded-full h-6 w-6 sm:h-8 sm:w-8"
-          >
-            <i class="text-white h-4 sm:h-auto" data-feather="arrow-right"></i>
-          </div>
+          <button
+            class="flex justify-center items-center bg-[#FF8906] rounded-full h-6 w-6 sm:h-8 sm:w-8 active:scale-90 transition-all">
+            <i
+              class="text-white h-4 sm:h-auto"
+              data-feather="arrow-right"
+            ></i>
+          </button>
         </div>
       </div>
 
@@ -384,7 +400,7 @@
           if your unable to find answer or find your product quickly, please
           describe your problem and tell us. we will give you solution.
         </p>
-        <button class="text-xs bg-[#FF8906] p-1.5 rounded-md">
+        <button class="text-xs bg-[#FF8906] p-1.5 sm:p-2 rounded-md active:scale-95 transition-all">
           Send Message
         </button>
       </div>
@@ -392,11 +408,10 @@
     <!-- list history order end -->
 
     <!-- footer start -->
-    <footer
-      class="flex justify-center items-center w-full h-fit py-6 sm:h-fit sm:py-12 bg-[#F8F8F8]"
-    >
-      <div class="flex flex-col w-5/6 gap-4 sm:gap-0">
-        <div class="flex flex-col sm:flex-row gap-10 sm:gap-20">
+    <footer class="flex justify-center items-center w-full h-fit py-6 sm:h-fit sm:py-12 bg-[#F8F8F8]">
+      <div class="flex flex-col w-5/6 gap-6 sm:gap-0">
+
+        <div class="flex flex-col sm:flex-row gap-8 sm:gap-20">
           <div class="flex flex-col gap-4 w-full sm:w-[21rem]">
             <div class="flex gap-4">
               <div>
@@ -406,14 +421,14 @@
                 <img src="./assets/text-logo.png" />
               </div>
             </div>
-            <p class="text-[#4F5665]">
+            <p class="text-[#4F5665] text-sm sm:text-base">
               Coffee Shop is a store that sells some good meals, and especially
               coffee. We provide high quality beans
             </p>
           </div>
 
-          <div class="flex gap-20">
-            <div class="flex flex-col gap-4">
+          <div class="flex gap-5 sm:gap-20">
+            <div class="flex flex-col gap-4 text-sm sm:text-base">
               <p class="font-semibold">Product</p>
               <div class="flex flex-col gap-2">
                 <a class="text-[#4F5665]" href="#">Our Product</a>
@@ -424,7 +439,7 @@
               </div>
             </div>
 
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 text-sm sm:text-base">
               <p class="font-semibold">Engage</p>
               <div class="flex flex-col gap-2">
                 <a class="text-[#4F5665]" href="#">Partner</a>
@@ -436,7 +451,7 @@
             </div>
           </div>
 
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-4 text-sm sm:text-base">
             <p class="font-semibold">Social Media</p>
             <div class="flex gap-4">
               <a href="#"><img src="/assets/facebook-logo-circle.png" /></a>
@@ -446,13 +461,35 @@
           </div>
         </div>
 
-        <p class="text-[#AFB5C0]" id="copyright">&copy;2020CoffeeStore</p>
+        <p class="text-[#AFB5C0] text-xs sm:text-sm" id="copyright">&copy;2020CoffeeStore</p>
+
       </div>
     </footer>
     <!-- footer end -->
 
     <script>
       feather.replace();
+
+      // search input nav desktop
+      const searchIcon = document.querySelector('#search-icon')
+      const searchInput = document.querySelector('#search-input')
+      const input = document.querySelector('#search-input input')
+
+      searchIcon.addEventListener('click', () => {
+        searchInput.classList.toggle('hidden')
+        input.value = ''
+      })
+
+
+      // nav mobile
+      const menu = document.querySelector('#menu')
+      const moreMenu = document.querySelector('#more-nav-menu')
+      const inputMobile = document.querySelector('#more-nav-menu input')
+
+      menu.addEventListener('click', () => {
+        moreMenu.classList.toggle('hidden')
+        inputMobile.value = ''
+      })
     </script>
   </body>
 </html>
