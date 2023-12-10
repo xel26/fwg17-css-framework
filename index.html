@@ -38,12 +38,12 @@
         </div>
 
         <div class="relative flex items-center gap-5 sm:w-[32rem] justify-end">
-          <div id="search-input" class="hidden absolute flex items-center left-12 border border-white rounded w-60 py-1 px-1.5">
+          <div id="search-input" class="hidden absolute flex items-center left-12 border border-white rounded w-60 py-1 px-1.5 transition-all">
             <input class="bg-transparent text-white placeholder-white text-base w-52 flex px-1 outline-none " type="text" placeholder="search">
           </div>
           <i id="search-icon" class="text-white hidden sm:block z-50" data-feather="search"></i>
           <i class="text-white" data-feather="shopping-cart"></i>
-          <i id="menu" class="sm:hidden text-white" data-feather="menu"></i>
+          <i id="menu" class="sm:hidden text-white active:scale-90 transition-all" data-feather="menu"></i>
           <a
             class="text-white border border-white py-2 px-3 text-sm rounded hidden sm:block"
             href="./login.html"
@@ -235,8 +235,8 @@
 
       <div class="gap-y-44 gap-x-6 flex flex-wrap justify-center mb-44 sm:gap-6 w-fit mx-6 sm:mx-0 sm:px-6">
         <div class="relative flex justify-center w-fit">
-          <div class="w-44 sm:w-56">
-            <img src="./assets/home-product1.jpg" alt="" />
+          <div>
+            <img class="w-44 sm:w-56" src="./assets/detail-product1.jpg" alt="" />
           </div>
           <div class="absolute w-11/12 bg-white shadow-md top-36 sm:top-44 p-2 flex flex-col gap-1 sm:gap-2">
             <h1 class="font-semibold text-sm sm:text-base" id="product-name">Hazelnut Latte</h1>
@@ -255,8 +255,8 @@
         </div>
 
         <div class="relative flex justify-center w-fit">
-          <div class="w-44 sm:w-56 bg-orange-100">
-            <img src="./assets/home-product2.jpg" alt="" />
+          <div>
+            <img class="w-44 sm:w-56" src="./assets/home-product2.jpg" alt="" />
           </div>
           <div class="absolute w-11/12 bg-white shadow-md top-36 sm:top-44 p-2 flex flex-col gap-1 sm:gap-2">
             <h1 class="font-semibold text-sm sm:text-base" id="product-name">Hazelnut Latte</h1>
@@ -275,8 +275,8 @@
         </div>
 
         <div class="relative flex justify-center w-fit">
-          <div class="w-44 sm:w-56 bg-orange-100">
-            <img src="./assets/home-product3.jpg" alt="" />
+          <div>
+            <img class="w-44 sm:w-56" src="./assets/home-product3.jpg" alt="" />
           </div>
           <div class="absolute w-11/12 bg-white shadow-md top-36 sm:top-44 p-2 flex flex-col gap-1 sm:gap-2">
             <h1 class="font-semibold text-sm sm:text-base" id="product-name">Hazelnut Latte</h1>
@@ -295,8 +295,8 @@
         </div>
 
         <div class="relative flex justify-center w-fit">
-          <div class="w-44 sm:w-56 bg-orange-100">
-            <img src="./assets/home-product1.jpg" alt="" />
+          <div>
+            <img class="w-44 sm:w-56" src="./assets/home-product1.jpg" alt="" />
           </div>
           <div class="absolute w-11/12 bg-white shadow-md top-36 sm:top-44 p-2 flex flex-col gap-1 sm:gap-2">
             <h1 class="font-semibold text-sm sm:text-base" id="product-name">Hazelnut Latte</h1>
@@ -373,20 +373,20 @@
           </div>
 
           <div class="flex gap-2">
-            <div id="next" class="flex justify-center items-center bg-white rounded-full h-8 w-8 active:scale-90 transition-all">
+            <button id="prev" class="flex justify-center items-center bg-white rounded-full h-8 w-8 active:scale-90 transition-all">
               <i class="h-5" data-feather="arrow-left"></i>
-            </div>
+            </button>
 
-            <div id="prev" class="flex justify-center items-center bg-[#FF8906] rounded-full h-8 w-8 active:scale-90 transition-all">
+            <button id="next" class="flex justify-center items-center bg-[#FF8906] rounded-full h-8 w-8 active:scale-90 transition-all">
               <i class="h-5"  data-feather="arrow-right"></i>
-            </div>
+            </button>
           </div>
 
           <div class="flex gap-1">
-            <div class="page-indicator focus:bg-[#FF8906] focus:w-8 bg-white w-2 h-2 rounded-md"></div>
-            <div class="page-indicator focus:bg-[#FF8906] bg-white focus:w-8 w-2 h-2 rounded-md"></div>
-            <div class="page-indicator focus:bg-[#FF8906] bg-white focus:w-8 w-2 h-2 rounded-md"></div>
-            <div class="page-indicator focus:bg-[#FF8906] bg-white focus:w-8 w-2 h-2 rounded-md"></div>
+            <button class="page-indicator focus:bg-[#FF8906] focus:w-8 bg-white w-2 h-2 rounded-md transition-all"></button>
+            <button class="page-indicator focus:bg-[#FF8906] focus:w-8 bg-white w-2 h-2 rounded-md transition-all"></button>
+            <button class="page-indicator focus:bg-[#FF8906] focus:w-8 bg-white w-2 h-2 rounded-md transition-all"></button>
+            <button class="page-indicator focus:bg-[#FF8906] focus:w-8 bg-white w-2 h-2 rounded-md transition-all"></button>
           </div>
         </div>
       </div>
@@ -487,21 +487,16 @@
       })
 
 
-      // testimonial page indicator
-      const next = document.querySelector('#next')
-      const prev = document.querySelector('#prev')
-      const pageIndicator = document.querySelectorAll('.page-indicator')
-      console.log(pageIndicator)
-      pageIndicator[0].focus()
+        // page indicator testimonial : bug
+        const btnNext = document.querySelector('#next')
+        const btnPrev = document.querySelector('#prev')
+        const pageIndicator = document.querySelectorAll('.page-indicator')
+        pageIndicator[0].classList.add('focus')
 
-      next.addEventListener('click', () => {
-        pageIndicator[0].focus()
-        console.log('gdkgkjkj')
-      })
-
-      let currentPage = 0
-        next.addEventListener('click', () => {
+        let currentPage = 0
+        btnNext.addEventListener('click', () => {
           currentPage++
+          console.log(currentPage)
           if(currentPage == parseInt(pageIndicator.length)){
             currentPage = 0
             pageIndicator[0].focus()
@@ -510,11 +505,11 @@
           }
         })
 
-        prev.addEventListener('click', () => {
+        btnPrev.addEventListener('click', () => {
           currentPage--
-          if(currentPage == 0){
-            currentPage = parseInt(pageIndicator.length - 1)
-            pageIndicator[parseInt(pageIndicator.length - 1)].focus()
+          if(currentPage < 1){
+            currentPage = 0
+            pageIndicator[currentPage].focus()
           }else{
             pageIndicator[currentPage].focus()
           }
