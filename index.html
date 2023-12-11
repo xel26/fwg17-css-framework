@@ -144,22 +144,22 @@
           </div>
           <div class="flex divide-x-2">
             <div class="flex-1 flex">
-              <div class="flex flex-col sm:gap-2">
-                <h1 class="text-[#ff8906] text-2xl sm:text-4xl font-semibold">90+</h1>
+              <div class="flex flex-col sm:gap-2  w-5/6">
+                <h1 id="staff" class="text-[#ff8906] text-2xl sm:text-4xl font-semibold">0+</h1>
                 <p class="text-white text-xs sm:text-sm">Staff</p>
               </div>
             </div>
 
             <div class="flex-1 flex justify-center">
-              <div class="flex flex-col sm:gap-2">
-                <h1 class="text-[#ff8906] text-2xl sm:text-4xl font-semibold">30+</h1>
+              <div class="flex flex-col items-center sm:gap-2 w-5/6">
+                <h1 id="stores" class="text-[#ff8906] text-2xl sm:text-4xl font-semibold">0+</h1>
                 <p class="text-white text-xs sm:text-sm">Stores</p>
               </div>
             </div>
 
             <div class="flex-1 flex justify-end">
-              <div class="flex flex-col sm:gap-2">
-                <h1 class="text-[#ff8906] text-2xl sm:text-4xl font-semibold">800+</h1>
+              <div class="flex flex-col items-end sm:gap-2 w-5/6">
+                <h1 id="customer" class="text-[#ff8906] text-2xl sm:text-4xl font-semibold">0+</h1>
                 <p class="text-white text-xs sm:text-sm">Customer</p>
               </div>
             </div>
@@ -487,6 +487,53 @@
       })
 
 
+      // data
+      const staff = document.querySelector('#staff')
+      window.addEventListener("load", (event) => {
+        let i = 1
+        const interval = setInterval(() => {
+          staff.innerHTML = `${i}+`
+
+          if(i >= 90){
+            clearInterval(interval)
+          }else{
+            i++
+          }
+
+        }, 100);
+      });
+
+      const stores = document.querySelector('#stores')
+      window.addEventListener("load", (event) => {
+        let i = 1
+        const interval = setInterval(() => {
+          stores.innerHTML = `${i}+`
+
+          if(i >= 30){
+            clearInterval(interval)
+          }else{
+            i++
+          }
+
+        }, 300);
+      });
+
+      const customer = document.querySelector('#customer')
+      window.addEventListener("load", (event) => {
+        let i = 1
+        const interval = setInterval(() => {
+          customer.innerHTML = `${i}+`
+
+          if(i >= 800){
+            clearInterval(interval)
+          }else{
+            i++
+          }
+
+        }, 11);
+      });
+
+
         // page indicator testimonial : bug
         const btnNext = document.querySelector('#next')
         const btnPrev = document.querySelector('#prev')
@@ -499,7 +546,7 @@
           console.log(currentPage)
           if(currentPage == parseInt(pageIndicator.length)){
             currentPage = 0
-            pageIndicator[0].focus()
+            pageIndicator[pageIndicator].focus()
           }else{
             pageIndicator[currentPage].focus()
           }
