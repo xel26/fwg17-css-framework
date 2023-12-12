@@ -32,26 +32,29 @@
             </div>
           </div>
           <div class="flex gap-12">
-            <a href="#" class="home focus:outline-none focus:border-b-2 focus:border-[#ff8906] text-white hidden sm:block">Home</a>
-            <a href="#" class="product focus:outline-none focus:border-b-2 focus:border-[#ff8906] text-white hidden sm:block">Product</a>
+            <a href="index.html" class="home focus:outline-none focus:border-b-2 focus:border-[#ff8906] text-white hidden sm:block">Home</a>
+            <a href="product.html" class="product focus:outline-none focus:border-b-2 focus:border-[#ff8906] text-white hidden sm:block">Product</a>
           </div>
         </div>
 
         <div class="relative flex items-center gap-5 sm:w-[32rem] justify-end">
-          <div id="search-input" class="hidden absolute flex items-center left-12 border border-white rounded w-60 py-1 px-1.5 transition-all">
+          <form id="search-input" class="hidden absolute flex items-center left-12 border border-white rounded w-60 py-1 px-1.5 transition-all">
             <input class="bg-transparent text-white placeholder-white text-base w-52 flex px-1 outline-none " type="text" placeholder="search">
-          </div>
-          <i id="search-icon" class="text-white hidden sm:block z-50" data-feather="search"></i>
-          <i class="text-white" data-feather="shopping-cart"></i>
+            <button class="hidden" type="submit"></button>
+          </form>
+          <i id="search-icon" class="text-white hidden sm:block z-50 active:scale-90 transition-all cursor-pointer" data-feather="search"></i>
+          <a href="checkout.html">
+            <i href="checkout.html" class="text-white active:scale-90 transition-all" data-feather="shopping-cart"></i>
+          </a>
           <i id="menu" class="sm:hidden text-white active:scale-90 transition-all" data-feather="menu"></i>
           <a
-            class="text-white border border-white py-2 px-3 text-sm rounded hidden sm:block"
+            class="text-white border border-white py-2 px-3 text-sm rounded hidden sm:block active:scale-95 transition-all"
             href="./login.html"
             id="sign-in"
             >Sign In</a
           >
           <a
-            class="bg-[#ff8906] py-2 px-3 text-sm rounded hidden sm:block"
+            class="bg-[#ff8906] py-2 px-3 text-sm rounded hidden sm:block active:scale-95 transition-all"
             href="./register.html"
             id="sign-up"
             >Sign Up</a
@@ -61,6 +64,15 @@
 
       <!-- nav mobile -->
       <div id="more-nav-menu" class="hidden sm:hidden flex flex-col gap-3 w-5/6 h-fit">
+        <div class="w-full flex justify-between text-white h-6">
+          <div class="flex-1 flex">
+            <a class="focus:border-b-2 focus:border-[#ff8906]" href="index.html">Home</a>
+          </div>
+          <div class="flex-1 flex justify-end">
+            <a class="focus:border-b-2 focus:border-[#ff8906]" href="product.html">Product</a>
+          </div>
+        </div>
+
         <div class="flex-1 flex items-center gap-2 w-full border border-white rounded py-1 px-2">
           <i class="text-white h-4" data-feather="search"></i>
           <input class="bg-transparent text-white text-sm outline-none placeholder-white w-full" type="text" placeholder="search">
@@ -128,20 +140,18 @@
     <!-- chatbox end -->
 
     <!-- landing page start -->
-    <section class="flex flex-col-reverse sm:flex-row h-[64rem] sm:h-screen w-full">
+    <section id="landing" class="flex flex-col-reverse sm:flex-row h-[64rem] sm:h-screen w-full">
       <div class="flex h-fit py-16 sm:py-0 sm:h-screen sm:flex-1 justify-center items-center bg-gradient-to-b from-[#323436] to-[#0B0909]">
         <div class="flex flex-col gap-6 max-w-md h-fit px-4 sm:px-0">
-          <h1 class="text-2xl sm:text-5xl text-white font-medium">Start Your Day with <br> Coffee and Good <br> Meals</h1>
-          <p class="text-white text-xs sm:text-sm w-11/12">
+          <h1 id="header" class="text-2xl sm:text-5xl text-white font-medium opacity-0 translate-x-[-5rem] transition-all duration-1000">Start Your Day with <br> Coffee and Good <br> Meals</h1>
+          <p id="description" class="text-white text-xs sm:text-sm w-11/12 opacity-0 translate-x-[-5rem] transition-all duration-1000 delay-500">
             We provide high quality beans, good taste, and healthy meals made by
             love just for you. Start your day with us for a bigger smile!
           </p>
-          <div class="flex justify-between">
-            <a href="./product.html" class="bg-[#ff8906] py-2 px-3 rounded-md text-xs sm:text-sm font-semibold active:scale-95 transition-all">Get Started</a>
-            <div class="hidden flex justify-center items-center bg-[#ff8906] rounded-full p-2 w-12 h-12">
-              <i data-feather="message-circle"></i>
-            </div>
-          </div>
+          <a href="./product.html" class="relative w-fit bg-[#ff8906] py-2 px-3 rounded-md text-xs sm:text-sm font-semibold active:scale-95 transition-all overflow-hidden">
+            <h1>Get Started</h1>
+            <span id="btn-get-started" class="absolute top-0 right-0 w-full h-full bg-[#ff8906] transition-all duration-1000 delay-1000"></span>
+          </a>
           <div class="flex divide-x-2">
             <div class="flex-1 flex">
               <div class="flex flex-col sm:gap-2  w-5/6">
@@ -172,21 +182,21 @@
     <!-- landing page end -->
 
     <!-- list provide start -->
-    <section class="flex flex-col-reverse sm:flex-row w-full h-[64rem] sm:h-screen w-full">
+    <section id="section" class="flex flex-col-reverse sm:flex-row w-full h-[64rem] sm:h-screen w-full">
         <div class="h-fit py-16 sm:py-0 sm:h-screen sm:flex-1  flex items-center">
           <div class="flex flex-col ml-8 sm:ml-28 gap-4 h-fit max-w-lg">
-              <div class="flex items-center gap-4">
+              <div id="provide-header"  class="flex items-center gap-4 opacity-0 translate-x-[-5rem] transition-all duration-1000">
                 <hr class="border-[#ff8906] border-2 sm:border-4 h-14"/>
                 <h1 class="text-2xl sm:text-5xl font-medium">
                   We Provide <span class="text-[#8E6447]">Good <br> Coffee</span> and
                   <span class="text-[#8E6447]">Healthy Meals</span>
                 </h1>
               </div>
-              <p class="text-sm text-[#4F5665]">
+              <p id="provide-description" class="text-sm text-[#4F5665] opacity-0 translate-x-[-5rem] transition-all duration-1000 delay-500">
                 You can explore the menu that we provide with fun and have their
                 own <br> taste and make your day better.
               </p>
-              <div class="flex flex-col gap-4">
+              <div id="list-provide" class="flex flex-col gap-4 opacity-0 translate-x-[-5rem] transition-all duration-1000 delay-1000">
                 <div class="flex gap-4">
                   <div class="bg-[#2FAB73] rounded-full text-white w-fit h-fit">
                     <i class="h-5 w-fit" data-feather="check-circle"></i>
@@ -560,6 +570,58 @@
           }else{
             pageIndicator[currentPage].focus()
           }
+        })
+
+
+
+        //window load : belum dinamis
+        const header = document.querySelector('#header')
+        const description = document.querySelector('#description')
+        const btnGetStarted = document.querySelector('#btn-get-started')
+
+        window.addEventListener('load', () => {
+           header.style.opacity = '100'
+           header.style.transform = 'translateX(0)'
+           description.style.opacity = '100'
+           description.style.transform = 'translateX(0)'
+           btnGetStarted.style.width = '0'
+        })
+
+
+        // window scroll : belum dinamis
+        const provideHeader = document.querySelector('#provide-header')
+        const provideDesc = document.querySelector('#provide-description')
+        const listProvide = document.querySelector('#list-provide')
+        const section = document.querySelector('#section')
+
+        window.addEventListener('scroll', () => {
+        let top = window.scrollY                    // jarak dari atas halaman
+        let offsetTop = section.offsetTop - 100     // untuk mengukur jarak vertikal suatu elemen HTML terhadap elemen induknya
+        let offsetHeight = section.offsetHeight     // mengukur Tinggi elemen itu sendiri, termasuk konten, border, dan padding.
+
+
+        // cek apakah elemen sedang terlihat saat menggulir halaman
+
+        if(top >= offsetTop && top < offsetTop + offsetHeight) {
+           provideHeader.style.opacity = '100'
+           provideHeader.style.transform = 'translateX(0)'
+
+           provideDesc.style.opacity = '100'
+           provideDesc.style.transform = 'translateX(0)'
+
+           listProvide.style.opacity = '100'
+           listProvide.style.transform = 'translateX(0)'
+
+        } else {
+          provideHeader.style.opacity = '0'
+          provideHeader.style.transform = 'translateX(-5rem)'
+
+          provideDesc.style.opacity = '0'
+          provideDesc.style.transform = 'translateX(-5rem)'
+
+          listProvide.style.opacity = '0'
+          listProvide.style.transform = 'translateX(-5rem)'
+        }
         })
     </script>
   </body>
