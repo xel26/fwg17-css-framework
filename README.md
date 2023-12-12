@@ -39,14 +39,22 @@ This will start the development server, and you can view the project at http://l
 - Stylish UI Design: Tailwind CSS is utilized to create an interface that is visually attractive and easy to use.
 - Responsive Design for All Devices : The Coffee Shop Web App can be accessed seamlessly from desktops, tablets, and smartphones.
 
-  ## Project Layout
+## Project Structure
 
 The organization of the project is structured as follows:
 
-- src/: Encompasses the project's source code.
-- components/: Houses reusable components utilized across the project.
-- pages/: Holds individual pages of the application.
-- styles/: Custom styles and Tailwind CSS configuration.
+-css-framework/ : This directory houses the core CSS framework files that are crucial for styling and layout throughout the web application.
+  - asset/ : The asset directory contains various resources such as images, fonts, or other media essential for the visual elements of the Coffee Shop Web.
+  - checkout.html :  represents the page where users can review and finalize their orders before completing the purchase.
+  - detail-order.html : provides detailed information about a specific order, allowing users to track and understand the details of their transactions.
+  - detail-product.html : the file dedicated to presenting in-depth information about a specific coffee product, helping users make informed decisions.
+  - forgot-password.html : provides a user-friendly interface for password reset.
+  - history-order.html : displays a comprehensive history of the user's past orders, facilitating a quick review of their purchase records.
+  - index.html : The main entry point of the Coffee Shop Web application. representing the homepage where users can explore and navigate through the available features.
+  - login.html : Users can log in to their accounts through the login.html page, ensuring a secure and personalized experience.
+  - product.html :  showcases the range of coffee products available, providing users with an overview of the offerings.
+  - profile.html : Users can manage and customize their profiles through the profile.html page, offering a centralized location for personalization.
+  - register.html : The register.html file allows new users to create accounts, providing a seamless onboarding experience.
 
   
 ## Customization
