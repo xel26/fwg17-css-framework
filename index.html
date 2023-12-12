@@ -137,7 +137,7 @@
             love just for you. Start your day with us for a bigger smile!
           </p>
           <div class="flex justify-between">
-            <button class="bg-[#ff8906] py-2 px-3 rounded-md text-xs active:scale-95 transition-all">Get Started</button>
+            <a href="./product.html" class="bg-[#ff8906] py-2 px-3 rounded-md text-xs sm:text-sm font-semibold active:scale-95 transition-all">Get Started</a>
             <div class="hidden flex justify-center items-center bg-[#ff8906] rounded-full p-2 w-12 h-12">
               <i data-feather="message-circle"></i>
             </div>
@@ -544,9 +544,9 @@
         btnNext.addEventListener('click', () => {
           currentPage++
           console.log(currentPage)
-          if(currentPage == parseInt(pageIndicator.length)){
-            currentPage = 0
-            pageIndicator[pageIndicator].focus()
+          if(currentPage >= parseInt(pageIndicator.length)){
+            currentPage = parseInt(pageIndicator.length) - 1
+            pageIndicator[currentPage].focus()
           }else{
             pageIndicator[currentPage].focus()
           }
